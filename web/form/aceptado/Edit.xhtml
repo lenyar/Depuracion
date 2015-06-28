@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AceptadoEditDlg" widgetVar="AceptadoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditAceptadoTitle}">
+            <h:form id="AceptadoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{aceptadoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{aceptadoController.selected.id}" title="#{bundle.EditAceptadoTitle_id}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_oficina}" for="oficina" />
+                        <p:inputText id="oficina" value="#{aceptadoController.selected.oficina}" title="#{bundle.EditAceptadoTitle_oficina}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_oficina}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_fecha}" for="fecha" />
+                        <p:inputText id="fecha" value="#{aceptadoController.selected.fecha}" title="#{bundle.EditAceptadoTitle_fecha}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_fecha}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_boletin}" for="boletin" />
+                        <p:inputText id="boletin" value="#{aceptadoController.selected.boletin}" title="#{bundle.EditAceptadoTitle_boletin}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_boletin}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_senalAutomatica}" for="senalAutomatica" />
+                        <p:inputText id="senalAutomatica" value="#{aceptadoController.selected.senalAutomatica}" title="#{bundle.EditAceptadoTitle_senalAutomatica}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_senalAutomatica}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_secuencia}" for="secuencia" />
+                        <p:inputText id="secuencia" value="#{aceptadoController.selected.secuencia}" title="#{bundle.EditAceptadoTitle_secuencia}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_secuencia}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_documento}" for="documento" />
+                        <p:inputText id="documento" value="#{aceptadoController.selected.documento}" title="#{bundle.EditAceptadoTitle_documento}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_documento}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_cuenta}" for="cuenta" />
+                        <p:inputText id="cuenta" value="#{aceptadoController.selected.cuenta}" title="#{bundle.EditAceptadoTitle_cuenta}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_cuenta}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_tercero}" for="tercero" />
+                        <p:inputText id="tercero" value="#{aceptadoController.selected.tercero}" title="#{bundle.EditAceptadoTitle_tercero}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_tercero}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_moneda}" for="moneda" />
+                        <p:inputText id="moneda" value="#{aceptadoController.selected.moneda}" title="#{bundle.EditAceptadoTitle_moneda}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_moneda}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_departamento}" for="departamento" />
+                        <p:inputText id="departamento" value="#{aceptadoController.selected.departamento}" title="#{bundle.EditAceptadoTitle_departamento}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_departamento}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_oficinaReceptora}" for="oficinaReceptora" />
+                        <p:inputText id="oficinaReceptora" value="#{aceptadoController.selected.oficinaReceptora}" title="#{bundle.EditAceptadoTitle_oficinaReceptora}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_oficinaReceptora}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_oficinaTerminal}" for="oficinaTerminal" />
+                        <p:inputText id="oficinaTerminal" value="#{aceptadoController.selected.oficinaTerminal}" title="#{bundle.EditAceptadoTitle_oficinaTerminal}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_oficinaTerminal}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_forma}" for="forma" />
+                        <p:inputText id="forma" value="#{aceptadoController.selected.forma}" title="#{bundle.EditAceptadoTitle_forma}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_forma}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_tipoInter}" for="tipoInter" />
+                        <p:inputText id="tipoInter" value="#{aceptadoController.selected.tipoInter}" title="#{bundle.EditAceptadoTitle_tipoInter}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_tipoInter}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_tipoRegistro}" for="tipoRegistro" />
+                        <p:inputText id="tipoRegistro" value="#{aceptadoController.selected.tipoRegistro}" title="#{bundle.EditAceptadoTitle_tipoRegistro}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_tipoRegistro}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_tipoImputacion}" for="tipoImputacion" />
+                        <p:inputText id="tipoImputacion" value="#{aceptadoController.selected.tipoImputacion}" title="#{bundle.EditAceptadoTitle_tipoImputacion}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_tipoImputacion}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_monto}" for="monto" />
+                        <p:inputText id="monto" value="#{aceptadoController.selected.monto}" title="#{bundle.EditAceptadoTitle_monto}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_monto}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_senalConciliacion}" for="senalConciliacion" />
+                        <p:inputText id="senalConciliacion" value="#{aceptadoController.selected.senalConciliacion}" title="#{bundle.EditAceptadoTitle_senalConciliacion}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_senalConciliacion}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_senalComprobante}" for="senalComprobante" />
+                        <p:inputText id="senalComprobante" value="#{aceptadoController.selected.senalComprobante}" title="#{bundle.EditAceptadoTitle_senalComprobante}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_senalComprobante}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_senalInter}" for="senalInter" />
+                        <p:inputText id="senalInter" value="#{aceptadoController.selected.senalInter}" title="#{bundle.EditAceptadoTitle_senalInter}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_senalInter}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_detalle}" for="detalle" />
+                        <p:inputText id="detalle" value="#{aceptadoController.selected.detalle}" title="#{bundle.EditAceptadoTitle_detalle}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_detalle}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{aceptadoController.selected.estado}" title="#{bundle.EditAceptadoTitle_estado}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_estado}"/>
+                        <p:outputLabel value="#{bundle.EditAceptadoLabel_idArchivo}" for="idArchivo" />
+                        <p:selectOneMenu id="idArchivo" value="#{aceptadoController.selected.idArchivo}" required="true" requiredMessage="#{bundle.EditAceptadoRequiredMessage_idArchivo}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{archivoController.itemsAvailableSelectOne}"
+                                           var="idArchivoItem"
+                                           itemValue="#{idArchivoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{aceptadoController.update}" value="#{bundle.Save}" update="display,:AceptadoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'AceptadoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AceptadoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

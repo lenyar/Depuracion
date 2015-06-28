@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ArchivoViewDlg" widgetVar="ArchivoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewArchivoTitle}">
+            <h:form id="ArchivoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{archivoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewArchivoLabel_id}"/>
+                        <h:outputText value="#{archivoController.selected.id}" title="#{bundle.ViewArchivoTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_nombre}"/>
+                        <h:outputText value="#{archivoController.selected.nombre}" title="#{bundle.ViewArchivoTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_descripcion}"/>
+                        <h:outputText value="#{archivoController.selected.descripcion}" title="#{bundle.ViewArchivoTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_revaluacion}"/>
+                        <h:outputText value="#{archivoController.selected.revaluacion}" title="#{bundle.ViewArchivoTitle_revaluacion}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_fechaCreacion}"/>
+                        <h:outputText value="#{archivoController.selected.fechaCreacion}" title="#{bundle.ViewArchivoTitle_fechaCreacion}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_validacion}"/>
+                        <h:outputText value="#{archivoController.selected.validacion}" title="#{bundle.ViewArchivoTitle_validacion}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_formato}"/>
+                        <h:outputText value="#{archivoController.selected.formato}" title="#{bundle.ViewArchivoTitle_formato}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_estado}"/>
+                        <h:outputText value="#{archivoController.selected.estado}" title="#{bundle.ViewArchivoTitle_estado}"/>
+                        <h:outputText value="#{bundle.ViewArchivoLabel_idModulo}"/>
+                        <h:outputText value="#{archivoController.selected.idModulo}" title="#{bundle.ViewArchivoTitle_idModulo}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ArchivoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

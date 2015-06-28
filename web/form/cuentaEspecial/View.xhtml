@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CuentaEspecialViewDlg" widgetVar="CuentaEspecialViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCuentaEspecialTitle}">
+            <h:form id="CuentaEspecialViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cuentaEspecialController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_id}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.id}" title="#{bundle.ViewCuentaEspecialTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_cuenta}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.cuenta}" title="#{bundle.ViewCuentaEspecialTitle_cuenta}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_descripcion}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.descripcion}" title="#{bundle.ViewCuentaEspecialTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_fechaCreacion}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.fechaCreacion}" title="#{bundle.ViewCuentaEspecialTitle_fechaCreacion}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_revaluacion}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.revaluacion}" title="#{bundle.ViewCuentaEspecialTitle_revaluacion}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_moneda}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.moneda}" title="#{bundle.ViewCuentaEspecialTitle_moneda}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_excluir}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.excluir}" title="#{bundle.ViewCuentaEspecialTitle_excluir}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_estado}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.estado}" title="#{bundle.ViewCuentaEspecialTitle_estado}"/>
+                        <h:outputText value="#{bundle.ViewCuentaEspecialLabel_idArchivo}"/>
+                        <h:outputText value="#{cuentaEspecialController.selected.idArchivo}" title="#{bundle.ViewCuentaEspecialTitle_idArchivo}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CuentaEspecialViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

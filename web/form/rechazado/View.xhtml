@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RechazadoViewDlg" widgetVar="RechazadoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewRechazadoTitle}">
+            <h:form id="RechazadoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{rechazadoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_id}"/>
+                        <h:outputText value="#{rechazadoController.selected.id}" title="#{bundle.ViewRechazadoTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_oficina}"/>
+                        <h:outputText value="#{rechazadoController.selected.oficina}" title="#{bundle.ViewRechazadoTitle_oficina}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_fecha}"/>
+                        <h:outputText value="#{rechazadoController.selected.fecha}" title="#{bundle.ViewRechazadoTitle_fecha}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_boletin}"/>
+                        <h:outputText value="#{rechazadoController.selected.boletin}" title="#{bundle.ViewRechazadoTitle_boletin}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_senalAutomatica}"/>
+                        <h:outputText value="#{rechazadoController.selected.senalAutomatica}" title="#{bundle.ViewRechazadoTitle_senalAutomatica}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_secuencia}"/>
+                        <h:outputText value="#{rechazadoController.selected.secuencia}" title="#{bundle.ViewRechazadoTitle_secuencia}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_documento}"/>
+                        <h:outputText value="#{rechazadoController.selected.documento}" title="#{bundle.ViewRechazadoTitle_documento}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_cuenta}"/>
+                        <h:outputText value="#{rechazadoController.selected.cuenta}" title="#{bundle.ViewRechazadoTitle_cuenta}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_tercero}"/>
+                        <h:outputText value="#{rechazadoController.selected.tercero}" title="#{bundle.ViewRechazadoTitle_tercero}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_moneda}"/>
+                        <h:outputText value="#{rechazadoController.selected.moneda}" title="#{bundle.ViewRechazadoTitle_moneda}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_departamento}"/>
+                        <h:outputText value="#{rechazadoController.selected.departamento}" title="#{bundle.ViewRechazadoTitle_departamento}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_oficinaReceptora}"/>
+                        <h:outputText value="#{rechazadoController.selected.oficinaReceptora}" title="#{bundle.ViewRechazadoTitle_oficinaReceptora}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_oficinaTerminal}"/>
+                        <h:outputText value="#{rechazadoController.selected.oficinaTerminal}" title="#{bundle.ViewRechazadoTitle_oficinaTerminal}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_forma}"/>
+                        <h:outputText value="#{rechazadoController.selected.forma}" title="#{bundle.ViewRechazadoTitle_forma}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_tipoInter}"/>
+                        <h:outputText value="#{rechazadoController.selected.tipoInter}" title="#{bundle.ViewRechazadoTitle_tipoInter}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_tipoRegistro}"/>
+                        <h:outputText value="#{rechazadoController.selected.tipoRegistro}" title="#{bundle.ViewRechazadoTitle_tipoRegistro}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_tipoImputacion}"/>
+                        <h:outputText value="#{rechazadoController.selected.tipoImputacion}" title="#{bundle.ViewRechazadoTitle_tipoImputacion}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_monto}"/>
+                        <h:outputText value="#{rechazadoController.selected.monto}" title="#{bundle.ViewRechazadoTitle_monto}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_senalConciliacion}"/>
+                        <h:outputText value="#{rechazadoController.selected.senalConciliacion}" title="#{bundle.ViewRechazadoTitle_senalConciliacion}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_senalComprobante}"/>
+                        <h:outputText value="#{rechazadoController.selected.senalComprobante}" title="#{bundle.ViewRechazadoTitle_senalComprobante}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_senalInter}"/>
+                        <h:outputText value="#{rechazadoController.selected.senalInter}" title="#{bundle.ViewRechazadoTitle_senalInter}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_detalle}"/>
+                        <h:outputText value="#{rechazadoController.selected.detalle}" title="#{bundle.ViewRechazadoTitle_detalle}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_estado}"/>
+                        <h:outputText value="#{rechazadoController.selected.estado}" title="#{bundle.ViewRechazadoTitle_estado}"/>
+                        <h:outputText value="#{bundle.ViewRechazadoLabel_idArchivo}"/>
+                        <h:outputText value="#{rechazadoController.selected.idArchivo}" title="#{bundle.ViewRechazadoTitle_idArchivo}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="RechazadoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RechazadoCreateDlg" widgetVar="RechazadoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateRechazadoTitle}">
+            <h:form id="RechazadoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{rechazadoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{rechazadoController.selected.id}" title="#{bundle.CreateRechazadoTitle_id}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_oficina}" for="oficina" />
+                        <p:inputText id="oficina" value="#{rechazadoController.selected.oficina}" title="#{bundle.CreateRechazadoTitle_oficina}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_oficina}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_fecha}" for="fecha" />
+                        <p:inputText id="fecha" value="#{rechazadoController.selected.fecha}" title="#{bundle.CreateRechazadoTitle_fecha}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_fecha}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_boletin}" for="boletin" />
+                        <p:inputText id="boletin" value="#{rechazadoController.selected.boletin}" title="#{bundle.CreateRechazadoTitle_boletin}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_boletin}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_senalAutomatica}" for="senalAutomatica" />
+                        <p:inputText id="senalAutomatica" value="#{rechazadoController.selected.senalAutomatica}" title="#{bundle.CreateRechazadoTitle_senalAutomatica}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_senalAutomatica}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_secuencia}" for="secuencia" />
+                        <p:inputText id="secuencia" value="#{rechazadoController.selected.secuencia}" title="#{bundle.CreateRechazadoTitle_secuencia}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_secuencia}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_documento}" for="documento" />
+                        <p:inputText id="documento" value="#{rechazadoController.selected.documento}" title="#{bundle.CreateRechazadoTitle_documento}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_documento}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_cuenta}" for="cuenta" />
+                        <p:inputText id="cuenta" value="#{rechazadoController.selected.cuenta}" title="#{bundle.CreateRechazadoTitle_cuenta}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_cuenta}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_tercero}" for="tercero" />
+                        <p:inputText id="tercero" value="#{rechazadoController.selected.tercero}" title="#{bundle.CreateRechazadoTitle_tercero}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_tercero}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_moneda}" for="moneda" />
+                        <p:inputText id="moneda" value="#{rechazadoController.selected.moneda}" title="#{bundle.CreateRechazadoTitle_moneda}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_moneda}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_departamento}" for="departamento" />
+                        <p:inputText id="departamento" value="#{rechazadoController.selected.departamento}" title="#{bundle.CreateRechazadoTitle_departamento}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_departamento}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_oficinaReceptora}" for="oficinaReceptora" />
+                        <p:inputText id="oficinaReceptora" value="#{rechazadoController.selected.oficinaReceptora}" title="#{bundle.CreateRechazadoTitle_oficinaReceptora}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_oficinaReceptora}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_oficinaTerminal}" for="oficinaTerminal" />
+                        <p:inputText id="oficinaTerminal" value="#{rechazadoController.selected.oficinaTerminal}" title="#{bundle.CreateRechazadoTitle_oficinaTerminal}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_oficinaTerminal}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_forma}" for="forma" />
+                        <p:inputText id="forma" value="#{rechazadoController.selected.forma}" title="#{bundle.CreateRechazadoTitle_forma}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_forma}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_tipoInter}" for="tipoInter" />
+                        <p:inputText id="tipoInter" value="#{rechazadoController.selected.tipoInter}" title="#{bundle.CreateRechazadoTitle_tipoInter}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_tipoInter}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_tipoRegistro}" for="tipoRegistro" />
+                        <p:inputText id="tipoRegistro" value="#{rechazadoController.selected.tipoRegistro}" title="#{bundle.CreateRechazadoTitle_tipoRegistro}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_tipoRegistro}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_tipoImputacion}" for="tipoImputacion" />
+                        <p:inputText id="tipoImputacion" value="#{rechazadoController.selected.tipoImputacion}" title="#{bundle.CreateRechazadoTitle_tipoImputacion}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_tipoImputacion}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_monto}" for="monto" />
+                        <p:inputText id="monto" value="#{rechazadoController.selected.monto}" title="#{bundle.CreateRechazadoTitle_monto}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_monto}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_senalConciliacion}" for="senalConciliacion" />
+                        <p:inputText id="senalConciliacion" value="#{rechazadoController.selected.senalConciliacion}" title="#{bundle.CreateRechazadoTitle_senalConciliacion}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_senalConciliacion}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_senalComprobante}" for="senalComprobante" />
+                        <p:inputText id="senalComprobante" value="#{rechazadoController.selected.senalComprobante}" title="#{bundle.CreateRechazadoTitle_senalComprobante}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_senalComprobante}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_senalInter}" for="senalInter" />
+                        <p:inputText id="senalInter" value="#{rechazadoController.selected.senalInter}" title="#{bundle.CreateRechazadoTitle_senalInter}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_senalInter}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_detalle}" for="detalle" />
+                        <p:inputText id="detalle" value="#{rechazadoController.selected.detalle}" title="#{bundle.CreateRechazadoTitle_detalle}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_detalle}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{rechazadoController.selected.estado}" title="#{bundle.CreateRechazadoTitle_estado}" required="true" requiredMessage="#{bundle.CreateRechazadoRequiredMessage_estado}"/>
+                        <p:outputLabel value="#{bundle.CreateRechazadoLabel_idArchivo}" for="idArchivo" />
+                        <p:selectOneMenu id="idArchivo" value="#{rechazadoController.selected.idArchivo}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_idArchivo}">
+                            <f:selectItems value="#{archivoController.itemsAvailableSelectOne}"
+                                           var="idArchivoItem"
+                                           itemValue="#{idArchivoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{rechazadoController.create}" value="#{bundle.Save}" update="display,:RechazadoListForm:datalist,:growl" oncomplete="handleSubmit(args,'RechazadoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RechazadoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

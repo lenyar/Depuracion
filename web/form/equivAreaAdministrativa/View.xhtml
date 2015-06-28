@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EquivAreaAdministrativaViewDlg" widgetVar="EquivAreaAdministrativaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEquivAreaAdministrativaTitle}">
+            <h:form id="EquivAreaAdministrativaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{equivAreaAdministrativaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEquivAreaAdministrativaLabel_id}"/>
+                        <h:outputText value="#{equivAreaAdministrativaController.selected.id}" title="#{bundle.ViewEquivAreaAdministrativaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewEquivAreaAdministrativaLabel_codigo}"/>
+                        <h:outputText value="#{equivAreaAdministrativaController.selected.codigo}" title="#{bundle.ViewEquivAreaAdministrativaTitle_codigo}"/>
+                        <h:outputText value="#{bundle.ViewEquivAreaAdministrativaLabel_descripcion}"/>
+                        <h:outputText value="#{equivAreaAdministrativaController.selected.descripcion}" title="#{bundle.ViewEquivAreaAdministrativaTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewEquivAreaAdministrativaLabel_fechaCreacion}"/>
+                        <h:outputText value="#{equivAreaAdministrativaController.selected.fechaCreacion}" title="#{bundle.ViewEquivAreaAdministrativaTitle_fechaCreacion}"/>
+                        <h:outputText value="#{bundle.ViewEquivAreaAdministrativaLabel_estado}"/>
+                        <h:outputText value="#{equivAreaAdministrativaController.selected.estado}" title="#{bundle.ViewEquivAreaAdministrativaTitle_estado}"/>
+                        <h:outputText value="#{bundle.ViewEquivAreaAdministrativaLabel_idAreaAdministrativa}"/>
+                        <h:outputText value="#{equivAreaAdministrativaController.selected.idAreaAdministrativa}" title="#{bundle.ViewEquivAreaAdministrativaTitle_idAreaAdministrativa}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EquivAreaAdministrativaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

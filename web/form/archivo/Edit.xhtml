@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ArchivoEditDlg" widgetVar="ArchivoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditArchivoTitle}">
+            <h:form id="ArchivoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{archivoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{archivoController.selected.id}" title="#{bundle.EditArchivoTitle_id}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{archivoController.selected.nombre}" title="#{bundle.EditArchivoTitle_nombre}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{archivoController.selected.descripcion}" title="#{bundle.EditArchivoTitle_descripcion}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_revaluacion}" for="revaluacion" />
+                        <p:inputText id="revaluacion" value="#{archivoController.selected.revaluacion}" title="#{bundle.EditArchivoTitle_revaluacion}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_revaluacion}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_fechaCreacion}" for="fechaCreacion" />
+                        <p:inputText id="fechaCreacion" value="#{archivoController.selected.fechaCreacion}" title="#{bundle.EditArchivoTitle_fechaCreacion}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_fechaCreacion}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_validacion}" for="validacion" />
+                        <p:inputText id="validacion" value="#{archivoController.selected.validacion}" title="#{bundle.EditArchivoTitle_validacion}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_validacion}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_formato}" for="formato" />
+                        <p:inputText id="formato" value="#{archivoController.selected.formato}" title="#{bundle.EditArchivoTitle_formato}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_formato}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{archivoController.selected.estado}" title="#{bundle.EditArchivoTitle_estado}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_estado}"/>
+                        <p:outputLabel value="#{bundle.EditArchivoLabel_idModulo}" for="idModulo" />
+                        <p:selectOneMenu id="idModulo" value="#{archivoController.selected.idModulo}" required="true" requiredMessage="#{bundle.EditArchivoRequiredMessage_idModulo}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{moduloController.itemsAvailableSelectOne}"
+                                           var="idModuloItem"
+                                           itemValue="#{idModuloItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{archivoController.update}" value="#{bundle.Save}" update="display,:ArchivoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ArchivoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ArchivoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

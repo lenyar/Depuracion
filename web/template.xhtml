@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+    </h:head>
+
+    <h:body>
+
+        <p:growl id="growl" life="3000" />
+
+        <p:layout fullPage="true" >
+            <p:graphicImage name="/images/logo.jpg" height="120" width="1850" />
+            
+                <p:layoutUnit position="north" size="150" resizable="true" closable="true" collapsible="true">
+                    
+                  <h:panelGrid columns="1" >
+                      <p:graphicImage name="/images/logo.jpg" height="120" width="1850" />
+                  </h:panelGrid>
+                    
+                 </p:layoutUnit>
+      
+          
+            
+    <p:layoutUnit position="west" size="160" header="Menú" collapsible="true">
+     <h:form>
+       <p:menu toggleable="true">
+        <p:submenu label="Mantenimiento">
+         <p:menuitem value="Aceptado" outcome="/form/aceptado/List.xhtml" />
+         <p:menuitem value="Archivo" outcome="/form/archivo/List.xhtml" />
+         <p:menuitem value="Area Administrativa" outcome="/form/areaAdministrativa/List.xhtml" />
+         <p:menuitem value="Boletin" outcome="/form/boletin/List.xhtml" />
+         <p:menuitem value="Cuadre" outcome="/form/cuadre/List.xhtml" />
+         <p:menuitem value="Cuenta Especial" outcome="/form/cuentaEspecial/List.xhtml" />
+         <p:menuitem value="Equivalencias" outcome="/form/equivAreaAdministrativa/List.xhtml" />
+         <p:menuitem value="Modulo" outcome="/form/modulo/List.xhtml" />
+         <p:menuitem value="Rechazado" outcome="/form/rechazado/List.xhtml" />
+         <p:menuitem value="Usuario" outcome="/form/usuario/List.xhtml" />
+        </p:submenu>
+       <p:submenu label="Procesos">
+            
+       </p:submenu>
+       </p:menu>
+           
+     </h:form>
+
+    </p:layoutUnit>
+            
+            <p:layoutUnit position="south" size="20">
+                <ui:insert name="footer"/>
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                 <h2><b>  <ui:insert name="encabezado">Systema carga de interfaces</ui:insert></b></h2>
+                <ui:insert name="body"> </ui:insert>
+            </p:layoutUnit>
+   
+           
+        </p:layout>
+
+    </h:body>
+
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RechazadoEditDlg" widgetVar="RechazadoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditRechazadoTitle}">
+            <h:form id="RechazadoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{rechazadoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{rechazadoController.selected.id}" title="#{bundle.EditRechazadoTitle_id}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_oficina}" for="oficina" />
+                        <p:inputText id="oficina" value="#{rechazadoController.selected.oficina}" title="#{bundle.EditRechazadoTitle_oficina}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_oficina}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_fecha}" for="fecha" />
+                        <p:inputText id="fecha" value="#{rechazadoController.selected.fecha}" title="#{bundle.EditRechazadoTitle_fecha}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_fecha}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_boletin}" for="boletin" />
+                        <p:inputText id="boletin" value="#{rechazadoController.selected.boletin}" title="#{bundle.EditRechazadoTitle_boletin}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_boletin}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_senalAutomatica}" for="senalAutomatica" />
+                        <p:inputText id="senalAutomatica" value="#{rechazadoController.selected.senalAutomatica}" title="#{bundle.EditRechazadoTitle_senalAutomatica}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_senalAutomatica}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_secuencia}" for="secuencia" />
+                        <p:inputText id="secuencia" value="#{rechazadoController.selected.secuencia}" title="#{bundle.EditRechazadoTitle_secuencia}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_secuencia}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_documento}" for="documento" />
+                        <p:inputText id="documento" value="#{rechazadoController.selected.documento}" title="#{bundle.EditRechazadoTitle_documento}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_documento}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_cuenta}" for="cuenta" />
+                        <p:inputText id="cuenta" value="#{rechazadoController.selected.cuenta}" title="#{bundle.EditRechazadoTitle_cuenta}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_cuenta}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_tercero}" for="tercero" />
+                        <p:inputText id="tercero" value="#{rechazadoController.selected.tercero}" title="#{bundle.EditRechazadoTitle_tercero}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_tercero}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_moneda}" for="moneda" />
+                        <p:inputText id="moneda" value="#{rechazadoController.selected.moneda}" title="#{bundle.EditRechazadoTitle_moneda}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_moneda}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_departamento}" for="departamento" />
+                        <p:inputText id="departamento" value="#{rechazadoController.selected.departamento}" title="#{bundle.EditRechazadoTitle_departamento}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_departamento}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_oficinaReceptora}" for="oficinaReceptora" />
+                        <p:inputText id="oficinaReceptora" value="#{rechazadoController.selected.oficinaReceptora}" title="#{bundle.EditRechazadoTitle_oficinaReceptora}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_oficinaReceptora}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_oficinaTerminal}" for="oficinaTerminal" />
+                        <p:inputText id="oficinaTerminal" value="#{rechazadoController.selected.oficinaTerminal}" title="#{bundle.EditRechazadoTitle_oficinaTerminal}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_oficinaTerminal}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_forma}" for="forma" />
+                        <p:inputText id="forma" value="#{rechazadoController.selected.forma}" title="#{bundle.EditRechazadoTitle_forma}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_forma}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_tipoInter}" for="tipoInter" />
+                        <p:inputText id="tipoInter" value="#{rechazadoController.selected.tipoInter}" title="#{bundle.EditRechazadoTitle_tipoInter}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_tipoInter}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_tipoRegistro}" for="tipoRegistro" />
+                        <p:inputText id="tipoRegistro" value="#{rechazadoController.selected.tipoRegistro}" title="#{bundle.EditRechazadoTitle_tipoRegistro}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_tipoRegistro}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_tipoImputacion}" for="tipoImputacion" />
+                        <p:inputText id="tipoImputacion" value="#{rechazadoController.selected.tipoImputacion}" title="#{bundle.EditRechazadoTitle_tipoImputacion}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_tipoImputacion}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_monto}" for="monto" />
+                        <p:inputText id="monto" value="#{rechazadoController.selected.monto}" title="#{bundle.EditRechazadoTitle_monto}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_monto}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_senalConciliacion}" for="senalConciliacion" />
+                        <p:inputText id="senalConciliacion" value="#{rechazadoController.selected.senalConciliacion}" title="#{bundle.EditRechazadoTitle_senalConciliacion}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_senalConciliacion}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_senalComprobante}" for="senalComprobante" />
+                        <p:inputText id="senalComprobante" value="#{rechazadoController.selected.senalComprobante}" title="#{bundle.EditRechazadoTitle_senalComprobante}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_senalComprobante}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_senalInter}" for="senalInter" />
+                        <p:inputText id="senalInter" value="#{rechazadoController.selected.senalInter}" title="#{bundle.EditRechazadoTitle_senalInter}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_senalInter}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_detalle}" for="detalle" />
+                        <p:inputText id="detalle" value="#{rechazadoController.selected.detalle}" title="#{bundle.EditRechazadoTitle_detalle}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_detalle}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{rechazadoController.selected.estado}" title="#{bundle.EditRechazadoTitle_estado}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_estado}"/>
+                        <p:outputLabel value="#{bundle.EditRechazadoLabel_idArchivo}" for="idArchivo" />
+                        <p:selectOneMenu id="idArchivo" value="#{rechazadoController.selected.idArchivo}" required="true" requiredMessage="#{bundle.EditRechazadoRequiredMessage_idArchivo}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{archivoController.itemsAvailableSelectOne}"
+                                           var="idArchivoItem"
+                                           itemValue="#{idArchivoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{rechazadoController.update}" value="#{bundle.Save}" update="display,:RechazadoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'RechazadoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RechazadoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
